@@ -1,0 +1,10 @@
+  postgres:
+    image: postgres:latest
+<% if (props.exposePorts) { -%>
+    ports:
+      - "5432:5432"
+<% } -%>
+    environment:
+      - POSTGRES_USER=<%= props.postgresUser; %>
+      - POSTGRES_PASSWORD=<%= props.postgresPassword; %>
+      - POSTGRES_DB=<%= props.postgresDatabase; %>

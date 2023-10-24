@@ -1,0 +1,4 @@
+services:
+<% props.services.forEach(function(service){ -%>
+<%- include(`service/${service}`, props); %>
+<% }) -%>

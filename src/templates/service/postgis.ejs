@@ -1,0 +1,12 @@
+  postgis:
+    image: postgis/postgis:latest
+<% if (props.exposePorts) { -%>
+    ports:
+      - "5432:5432"
+<% } -%>
+#    volumes:
+#      - $PWD/bootstrap/init-admin-db.sh:/docker-entrypoint-initdb.d/init-admin-db.sh
+    environment:
+      - POSTGRES_USER=<%= props.postgresUser; %>
+      - POSTGRES_PASSWORD=<%= props.postgresPassword; %>
+      - POSTGRES_DB=<%= props.postgresDatabase; %>

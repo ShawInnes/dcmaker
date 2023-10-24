@@ -1,0 +1,6 @@
+  redis:
+    image: redis:latest
+<% if (props.exposePorts) { -%>
+    ports:
+      - "6379:6379"
+<% } -%>
